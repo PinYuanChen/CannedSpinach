@@ -13,6 +13,11 @@
 		CDF37474283B85A100AD8E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF37472283B85A100AD8E72 /* Main.storyboard */; };
 		CDF37476283B85A200AD8E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF37475283B85A200AD8E72 /* Assets.xcassets */; };
 		CDF37479283B85A200AD8E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF37477283B85A200AD8E72 /* LaunchScreen.storyboard */; };
+		CDF37483283B85C600AD8E72 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CDF37482283B85C600AD8E72 /* SnapKit */; };
+		CDF37486283B85E000AD8E72 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CDF37485283B85E000AD8E72 /* RxCocoa */; };
+		CDF37488283B85E000AD8E72 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CDF37487283B85E000AD8E72 /* RxSwift */; };
+		CDF3748B283B87D300AD8E72 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3748A283B87D300AD8E72 /* Operators.swift */; };
+		CDF3748E283B8A4700AD8E72 /* Cell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3748D283B8A4700AD8E72 /* Cell+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,8 @@
 		CDF37475283B85A200AD8E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF37478283B85A200AD8E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDF3747A283B85A200AD8E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDF3748A283B87D300AD8E72 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		CDF3748D283B8A4700AD8E72 /* Cell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF37488283B85E000AD8E72 /* RxSwift in Frameworks */,
+				CDF37486283B85E000AD8E72 /* RxCocoa in Frameworks */,
+				CDF37483283B85C600AD8E72 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +68,39 @@
 			children = (
 				CDF3746C283B85A100AD8E72 /* AppDelegate.swift */,
 				CDF3746E283B85A100AD8E72 /* SceneDelegate.swift */,
-				CDF37470283B85A100AD8E72 /* ViewController.swift */,
+				CDF3748C283B8A3700AD8E72 /* Extensions */,
+				CDF37489283B870100AD8E72 /* Helpers */,
+				CDF37480283B85B000AD8E72 /* Demo */,
 				CDF37472283B85A100AD8E72 /* Main.storyboard */,
 				CDF37475283B85A200AD8E72 /* Assets.xcassets */,
 				CDF37477283B85A200AD8E72 /* LaunchScreen.storyboard */,
 				CDF3747A283B85A200AD8E72 /* Info.plist */,
 			);
 			path = CannedSpinach;
+			sourceTree = "<group>";
+		};
+		CDF37480283B85B000AD8E72 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				CDF37470283B85A100AD8E72 /* ViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		CDF37489283B870100AD8E72 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CDF3748A283B87D300AD8E72 /* Operators.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CDF3748C283B8A3700AD8E72 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CDF3748D283B8A4700AD8E72 /* Cell+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +119,11 @@
 			dependencies = (
 			);
 			name = CannedSpinach;
+			packageProductDependencies = (
+				CDF37482283B85C600AD8E72 /* SnapKit */,
+				CDF37485283B85E000AD8E72 /* RxCocoa */,
+				CDF37487283B85E000AD8E72 /* RxSwift */,
+			);
 			productName = CannedSpinach;
 			productReference = CDF37469283B85A100AD8E72 /* CannedSpinach.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +152,10 @@
 				Base,
 			);
 			mainGroup = CDF37460283B85A100AD8E72;
+			packageReferences = (
+				CDF37481283B85C600AD8E72 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CDF37484283B85E000AD8E72 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = CDF3746A283B85A100AD8E72 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF3748E283B8A4700AD8E72 /* Cell+Ext.swift in Sources */,
 				CDF37471283B85A100AD8E72 /* ViewController.swift in Sources */,
+				CDF3748B283B87D300AD8E72 /* Operators.swift in Sources */,
 				CDF3746D283B85A100AD8E72 /* AppDelegate.swift in Sources */,
 				CDF3746F283B85A100AD8E72 /* SceneDelegate.swift in Sources */,
 			);
@@ -360,6 +407,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDF37481283B85C600AD8E72 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		CDF37484283B85E000AD8E72 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDF37482283B85C600AD8E72 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDF37481283B85C600AD8E72 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		CDF37485283B85E000AD8E72 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDF37484283B85E000AD8E72 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CDF37487283B85E000AD8E72 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDF37484283B85E000AD8E72 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CDF37461283B85A100AD8E72 /* Project object */;
 }
