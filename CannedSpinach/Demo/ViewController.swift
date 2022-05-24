@@ -13,7 +13,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
         setupTableView()
+    }
+    
+    func setupNavigation() {
+        let label = UILabel()
+        label.text = "Demo"
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .white
+        navigationItem.leftBarButtonItem = .init(customView: label)
     }
 
     func setupTableView() {
@@ -29,13 +38,21 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        DemoList.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.use(table: tableView, for: indexPath)
-        cell.textLabel?.text = "test"
+        cell.accessoryType = .disclosureIndicator
+        let demo = DemoList.allCases[indexPath.row]
+        cell.textLabel?.text = demo.title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = DemoList.allCases[indexPath.row].viewController
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
