@@ -7,6 +7,7 @@ import UIKit
 
 enum DemoList: Int, CaseIterable {
     case infiniteCollectionView
+    case blinkGrid
 }
 
 extension DemoList {
@@ -14,6 +15,8 @@ extension DemoList {
         switch self {
         case .infiniteCollectionView:
             return "無限滾動CollectionView"
+        case .blinkGrid:
+            return "閃爍表格"
         }
     }
     
@@ -21,6 +24,8 @@ extension DemoList {
         switch self {
         case.infiniteCollectionView:
             return DemoInfiniteCollectionViewController()
+        case .blinkGrid:
+            return DemoBlinkGridViewController()
         }
     }
 }
