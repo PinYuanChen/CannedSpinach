@@ -18,8 +18,8 @@ class BlinkGridView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addTopBorderView()
         addMiddleBorderView()
+        addBottomBorderView()
     }
     
     private let topView1 = UIView()
@@ -39,11 +39,11 @@ class BlinkGridView: UIView {
     public func triggerBlink() {
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0, options: .curveEaseInOut) {
             UIView.setAnimationRepeatCount(3)
-            self.middleView1.layer.shadowColor = UIColor.white.cgColor
-            self.middleView1.layer.shadowOpacity = 1
-            self.middleView1.layer.shadowRadius = 15
+            self.middleView2.layer.shadowColor = UIColor.white.cgColor
+            self.middleView2.layer.shadowOpacity = 1
+            self.middleView2.layer.shadowRadius = 15
         } completion: { _ in
-            self.middleView1.layer.shadowOpacity = 0
+            self.middleView2.layer.shadowOpacity = 0
         }
     }
     
@@ -64,7 +64,6 @@ private extension BlinkGridView {
         topStackView.axis = .horizontal
         topStackView.distribution = .fillEqually
         topStackView.spacing = -2
-        topStackView.layer.cornerRadius = 10
         addSubview(topStackView)
         topStackView.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(20)
@@ -142,22 +141,15 @@ private extension BlinkGridView {
         bottomView1.layer.borderWidth = 2
         bottomView1.layer.borderColor = UIColor.white.cgColor
         bottomStackView.addArrangedSubview(bottomView1)
+        bottomView1.layer.cornerRadius = 10
+        bottomView1.layer.maskedCorners = [.layerMinXMaxYCorner]
         
         bottomView2.backgroundColor = .systemIndigo
         bottomView2.layer.borderWidth = 2
         bottomView2.layer.borderColor = UIColor.white.cgColor
+        bottomView2.layer.cornerRadius = 10
         bottomStackView.addArrangedSubview(bottomView2)
-    }
-    
-    func addTopBorderView() {
-        let globalPoint = topView1.convert(topView1.bounds, to: self)
-        let newView = UIView.init(frame: globalPoint)
-        newView.backgroundColor = .clear
-        newView.layer.borderWidth = 2
-        newView.layer.borderColor = UIColor.yellow.cgColor
-        newView.layer.cornerRadius = 10
-        newView.layer.maskedCorners = [.layerMinXMinYCorner]
-        addSubview(newView)
+        bottomView2.layer.maskedCorners = [.layerMaxXMaxYCorner]
     }
     
     func addMiddleBorderView() {
@@ -166,6 +158,17 @@ private extension BlinkGridView {
         newView.backgroundColor = .clear
         newView.layer.borderColor = UIColor.yellow.cgColor
         newView.layer.borderWidth = 2
+        addSubview(newView)
+    }
+    
+    func addBottomBorderView() {
+        let globalPoint = bottomView2.convert(bottomView2.bounds, to: self)
+        let newView = UIView.init(frame: globalPoint)
+        newView.backgroundColor = .clear
+        newView.layer.borderWidth = 2
+        newView.layer.borderColor = UIColor.yellow.cgColor
+        newView.layer.cornerRadius = 10
+        newView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         addSubview(newView)
     }
 }
