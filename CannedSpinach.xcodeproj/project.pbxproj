@@ -23,6 +23,9 @@
 		CDF37497283CA2CB00AD8E72 /* DemoInfiniteCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF37496283CA2CB00AD8E72 /* DemoInfiniteCollectionViewController.swift */; };
 		CDF3749A283DD10700AD8E72 /* BlinkGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF37499283DD10700AD8E72 /* BlinkGridView.swift */; };
 		CDF3749C283DD3AF00AD8E72 /* DemoBlinkGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3749B283DD3AF00AD8E72 /* DemoBlinkGridViewController.swift */; };
+		CDF3749F283F595900AD8E72 /* PageSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3749E283F595900AD8E72 /* PageSegmentView.swift */; };
+		CDF374A1283F598500AD8E72 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF374A0283F598500AD8E72 /* PageView.swift */; };
+		CDF374A3283F605400AD8E72 /* PageSegmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF374A2283F605400AD8E72 /* PageSegmentCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		CDF37496283CA2CB00AD8E72 /* DemoInfiniteCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoInfiniteCollectionViewController.swift; sourceTree = "<group>"; };
 		CDF37499283DD10700AD8E72 /* BlinkGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkGridView.swift; sourceTree = "<group>"; };
 		CDF3749B283DD3AF00AD8E72 /* DemoBlinkGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBlinkGridViewController.swift; sourceTree = "<group>"; };
+		CDF3749E283F595900AD8E72 /* PageSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSegmentView.swift; sourceTree = "<group>"; };
+		CDF374A0283F598500AD8E72 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		CDF374A2283F605400AD8E72 /* PageSegmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSegmentCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 			children = (
 				CDF3746C283B85A100AD8E72 /* AppDelegate.swift */,
 				CDF3746E283B85A100AD8E72 /* SceneDelegate.swift */,
+				CDF3749D283F590C00AD8E72 /* PageContainers */,
 				CDF37498283DCF3400AD8E72 /* BlinkGrid */,
 				CDF37491283C833D00AD8E72 /* InfiniteCollectionView */,
 				CDF3748C283B8A3700AD8E72 /* Extensions */,
@@ -132,6 +139,16 @@
 				CDF3749B283DD3AF00AD8E72 /* DemoBlinkGridViewController.swift */,
 			);
 			path = BlinkGrid;
+			sourceTree = "<group>";
+		};
+		CDF3749D283F590C00AD8E72 /* PageContainers */ = {
+			isa = PBXGroup;
+			children = (
+				CDF3749E283F595900AD8E72 /* PageSegmentView.swift */,
+				CDF374A2283F605400AD8E72 /* PageSegmentCollectionViewCell.swift */,
+				CDF374A0283F598500AD8E72 /* PageView.swift */,
+			);
+			path = PageContainers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,12 +232,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF3748E283B8A4700AD8E72 /* Cell+Ext.swift in Sources */,
+				CDF374A1283F598500AD8E72 /* PageView.swift in Sources */,
+				CDF374A3283F605400AD8E72 /* PageSegmentCollectionViewCell.swift in Sources */,
 				CDF37471283B85A100AD8E72 /* ViewController.swift in Sources */,
 				CDF3749C283DD3AF00AD8E72 /* DemoBlinkGridViewController.swift in Sources */,
 				CDF3748B283B87D300AD8E72 /* Operators.swift in Sources */,
 				CDF3749A283DD10700AD8E72 /* BlinkGridView.swift in Sources */,
 				CDF37497283CA2CB00AD8E72 /* DemoInfiniteCollectionViewController.swift in Sources */,
 				CDF3746D283B85A100AD8E72 /* AppDelegate.swift in Sources */,
+				CDF3749F283F595900AD8E72 /* PageSegmentView.swift in Sources */,
 				CDF37490283C81A600AD8E72 /* DemoList.swift in Sources */,
 				CDF3746F283B85A100AD8E72 /* SceneDelegate.swift in Sources */,
 				CDF37495283C86C300AD8E72 /* InfiniteCollectionView.swift in Sources */,
