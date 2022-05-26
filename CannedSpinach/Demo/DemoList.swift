@@ -8,6 +8,10 @@ import UIKit
 enum DemoList: Int, CaseIterable {
     case infiniteCollectionView
     case blinkGrid
+    case pageContainer
+    case countDownTimer
+    case gameProgressBar
+    case threeDimensionBanner
 }
 
 extension DemoList {
@@ -17,6 +21,14 @@ extension DemoList {
             return "無限滾動CollectionView"
         case .blinkGrid:
             return "閃爍表格"
+        case .pageContainer:
+            return "多頁框架"
+        case .countDownTimer:
+            return "倒數計時器"
+        case .gameProgressBar:
+            return "比賽進度條"
+        case .threeDimensionBanner:
+            return "3D廣告"
         }
     }
     
@@ -26,6 +38,11 @@ extension DemoList {
             return DemoInfiniteCollectionViewController()
         case .blinkGrid:
             return DemoBlinkGridViewController()
+        case .pageContainer,
+                .countDownTimer,
+                .gameProgressBar,
+                .threeDimensionBanner:
+            return .init()
         }
     }
 }

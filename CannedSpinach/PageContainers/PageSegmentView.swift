@@ -3,15 +3,43 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PageSegmentView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    let selectedIndex = BehaviorRelay<Int>(value: 0)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+        bind()
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupUI()
+        bind()
+    }
+    
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    
+}
 
+private extension PageSegmentView {
+    func setupUI() {
+        setupCollectionView()
+    }
+    
+    func setupCollectionView() {
+        collectionView.register(PageSegmentCollectionViewCell.self)
+        
+    }
+}
+
+
+private extension PageSegmentView {
+    func bind() {
+        
+    }
 }
