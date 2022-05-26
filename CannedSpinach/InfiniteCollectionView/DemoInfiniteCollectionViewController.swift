@@ -28,7 +28,7 @@ extension DemoInfiniteCollectionViewController: InfiniteDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellItem = collectionMockData[indexPath.item]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = UICollectionViewCell.use(collection: collectionView, for: indexPath)
         cell.contentView.backgroundColor = cellItem
 
         return cell
@@ -62,7 +62,7 @@ private extension DemoInfiniteCollectionViewController {
         collectionView.clipsToBounds = true
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UICollectionViewCell.self)
         collectionView.infiniteDelegate = self
         view.addSubview(collectionView)
         
