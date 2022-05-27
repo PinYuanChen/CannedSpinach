@@ -6,24 +6,24 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class PageSegmentCollectionViewCell: UICollectionViewCell {
+enum State {
+    case normal
+    case selected
+    case disabled
     
-    enum State {
-        case normal
-        case selected
-        case disabled
-        
-        var stateColor: UIColor {
-            switch self {
-            case .normal:
-                return .systemGray
-            case .selected:
-                return .systemPink
-            case .disabled:
-                return .lightGray
-            }
+    var stateColor: UIColor {
+        switch self {
+        case .normal:
+            return .systemGray
+        case .selected:
+            return .white
+        case .disabled:
+            return .lightGray
         }
     }
+}
+
+class PageSegmentCollectionViewCell: UICollectionViewCell {
     
     let state = BehaviorRelay<State>(value: .normal)
     let titleText = BehaviorRelay<String?>(value: nil)
@@ -31,11 +31,13 @@ class PageSegmentCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        bind()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupUI()
+        bind()
     }
     
     private let titleLabel = UILabel()

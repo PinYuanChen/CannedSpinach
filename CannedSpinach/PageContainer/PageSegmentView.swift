@@ -64,7 +64,35 @@ private extension PageSegmentView {
     func setupUnderlineImageView() {
         underlineImageView.alpha = 0
         collectionView.addSubview(underlineImageView)
+    }
+    
+    func draw(at item: Int) {
+        let index = IndexPath(item: item, section: 0)
+        guard let cell = collectionView.cellForItem(at: index) else { return }
         
+        let rect = self.convert(cell.frame, to: self)
+       
+        if rect.height != 0 {
+            self.underlineImageView.alpha = 1
+            self.underlineImageView.frame.size.height = 3
+            self.underlineImageView.frame.origin.y = rect.maxY - self.underlineImageView.frame.height
+        }
+        
+        UIViewPropertyAnimator
+            .runningPropertyAnimator(
+                withDuration: 0.2,
+                delay: .zero,
+                options: [
+                    .curveEaseInOut,
+                    .beginFromCurrentState
+                ],
+                animations: {
+                    self.underlineImageView.frame.origin.x = rect.minX
+                    self.underlineImageView.frame.size.width = rect.width
+                    self.underlineImageView.backgroundColor = .white
+                },
+                completion: nil)
+            .startAnimation()
     }
 }
 
@@ -73,8 +101,21 @@ private extension PageSegmentView {
 private extension PageSegmentView {
     func bind() {
         rx
-            .observe(\.bounds.size)
-            .bind(to: segmentSize)
+            .observe(\.bounds)
+            .withUnretained(self)
+            .subscribe(onNext: { owner, bounds in
+                let size = bounds.size
+                owner.segmentSize.accept(size)
+            })
+            .disposed(by: disposeBag)
+        
+        selectedIndex
+            .delay(.microseconds(1), scheduler: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { owner, index in
+                owner.draw(at: index)
+                owner.collectionView.reloadData()
+            })
             .disposed(by: disposeBag)
     }
 }
@@ -92,6 +133,10 @@ extension PageSegmentView: UICollectionViewDataSource, UICollectionViewDelegateF
         let title = titles.value[indexPath.item]
         let cell = PageSegmentCollectionViewCell.use(collection: collectionView, for: indexPath)
         cell.titleText.accept(title)
+        
+        let state = (indexPath.item == selectedIndex.value) ? State.selected : State.normal
+        cell.state.accept(state)
+        
         return cell
     }
     
@@ -104,5 +149,9 @@ extension PageSegmentView: UICollectionViewDataSource, UICollectionViewDelegateF
         let size = segmentSize.value
         //TODO: add spacing
         return .init(width: size.width / count, height: size.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndex.accept(indexPath.item)
     }
 }

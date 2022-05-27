@@ -38,8 +38,9 @@ extension DemoList {
             return DemoInfiniteCollectionViewController()
         case .blinkGrid:
             return DemoBlinkGridViewController()
-        case .pageContainer,
-                .countDownTimer,
+        case .pageContainer:
+            return DemoPageContainerViewController()
+        case .countDownTimer,
                 .gameProgressBar,
                 .threeDimensionBanner:
             return .init()
