@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37B38D6A285484FE00C649F1 /* XodiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B38D69285484FE00C649F1 /* XodiViewController.swift */; };
+		37B38D6E285485C200C649F1 /* XodiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B38D6D285485C200C649F1 /* XodiCollectionViewCell.swift */; };
+		37B38D702854871E00C649F1 /* XodiPlayTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B38D6F2854871E00C649F1 /* XodiPlayTypeView.swift */; };
+		37B38D722854875800C649F1 /* XodiPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B38D712854875800C649F1 /* XodiPatternView.swift */; };
 		CDF3746D283B85A100AD8E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3746C283B85A100AD8E72 /* AppDelegate.swift */; };
 		CDF3746F283B85A100AD8E72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3746E283B85A100AD8E72 /* SceneDelegate.swift */; };
 		CDF37471283B85A100AD8E72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF37470283B85A100AD8E72 /* ViewController.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37B38D69285484FE00C649F1 /* XodiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XodiViewController.swift; sourceTree = "<group>"; };
+		37B38D6D285485C200C649F1 /* XodiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XodiCollectionViewCell.swift; sourceTree = "<group>"; };
+		37B38D6F2854871E00C649F1 /* XodiPlayTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XodiPlayTypeView.swift; sourceTree = "<group>"; };
+		37B38D712854875800C649F1 /* XodiPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XodiPatternView.swift; sourceTree = "<group>"; };
 		CDF37469283B85A100AD8E72 /* CannedSpinach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CannedSpinach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF3746C283B85A100AD8E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF3746E283B85A100AD8E72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37B38D68285484F000C649F1 /* Xodi */ = {
+			isa = PBXGroup;
+			children = (
+				37B38D69285484FE00C649F1 /* XodiViewController.swift */,
+				37B38D6D285485C200C649F1 /* XodiCollectionViewCell.swift */,
+				37B38D6F2854871E00C649F1 /* XodiPlayTypeView.swift */,
+				37B38D712854875800C649F1 /* XodiPatternView.swift */,
+			);
+			path = Xodi;
+			sourceTree = "<group>";
+		};
 		CDF37460283B85A100AD8E72 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +105,7 @@
 			children = (
 				CDF3746C283B85A100AD8E72 /* AppDelegate.swift */,
 				CDF3746E283B85A100AD8E72 /* SceneDelegate.swift */,
+				37B38D68285484F000C649F1 /* Xodi */,
 				CDF3749D283F590C00AD8E72 /* PageContainer */,
 				CDF37498283DCF3400AD8E72 /* BlinkGrid */,
 				CDF37491283C833D00AD8E72 /* InfiniteCollectionView */,
@@ -236,7 +256,10 @@
 			files = (
 				CDF3748E283B8A4700AD8E72 /* Cell+Ext.swift in Sources */,
 				CDF374A1283F598500AD8E72 /* PageView.swift in Sources */,
+				37B38D6E285485C200C649F1 /* XodiCollectionViewCell.swift in Sources */,
+				37B38D722854875800C649F1 /* XodiPatternView.swift in Sources */,
 				CDF374A3283F605400AD8E72 /* PageSegmentCollectionViewCell.swift in Sources */,
+				37B38D6A285484FE00C649F1 /* XodiViewController.swift in Sources */,
 				CDF37471283B85A100AD8E72 /* ViewController.swift in Sources */,
 				CDF3749C283DD3AF00AD8E72 /* DemoBlinkGridViewController.swift in Sources */,
 				CDF3748B283B87D300AD8E72 /* Operators.swift in Sources */,
@@ -246,6 +269,7 @@
 				CDF3746D283B85A100AD8E72 /* AppDelegate.swift in Sources */,
 				CDF3749F283F595900AD8E72 /* PageSegmentView.swift in Sources */,
 				CDF37490283C81A600AD8E72 /* DemoList.swift in Sources */,
+				37B38D702854871E00C649F1 /* XodiPlayTypeView.swift in Sources */,
 				CDF3746F283B85A100AD8E72 /* SceneDelegate.swift in Sources */,
 				CDF37495283C86C300AD8E72 /* InfiniteCollectionView.swift in Sources */,
 			);

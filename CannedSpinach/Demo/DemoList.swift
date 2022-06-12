@@ -12,6 +12,7 @@ enum DemoList: Int, CaseIterable {
     case countDownTimer
     case gameProgressBar
     case threeDimensionBanner
+    case xodi
 }
 
 extension DemoList {
@@ -29,6 +30,8 @@ extension DemoList {
             return "比賽進度條"
         case .threeDimensionBanner:
             return "3D廣告"
+        case .xodi:
+            return "色碟"
         }
     }
     
@@ -44,6 +47,8 @@ extension DemoList {
                 .gameProgressBar,
                 .threeDimensionBanner:
             return .init()
+        case .xodi:
+            return XodiViewController()
         }
     }
 }
